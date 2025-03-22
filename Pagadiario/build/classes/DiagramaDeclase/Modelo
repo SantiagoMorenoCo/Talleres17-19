@@ -1,0 +1,24 @@
+class Cliente {
+    - nombre: String
+    - saldo: double
+    + Cliente(nombre: String, saldo: double)
+    + getNombre(): String
+    + getSaldo(): double
+    + registrarPago(pago: double): void
+}
+
+class RegistroClientes {
+    - clientes: List<Cliente>
+    + RegistroClientes()
+    + agregarCliente(nombre: String, saldo: double): void
+    + registrarPago(nombre: String, pago: double): void
+    + verSaldos(): void
+}
+
+class GestionPOO {
+    + main(args: String[]): void
+}
+
+RegistroClientes "1" -- "" Cliente : Contiene
+GestionPOO ..> RegistroClientes : Usa
+
